@@ -560,6 +560,7 @@ input::placeholder {
     Card with box shadow
 */
 
+
 .c-card {
     --card-backgroundColor: White;
     --card__footer-borderColor: var(--global-color-neutral-xxx-light);
@@ -648,6 +649,18 @@ input::placeholder {
 Input password with toggle checkbox on top of it needs
 more padding on the right to avoid overlap
 */
+
+.c-password__hidden{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.c-password__hidden .c-option,.c-password__hidden .c-label {
+    position: absolute;
+    z-index: 10;
+}
 
 .c-input--password-with-toggle {
     padding-right: 52px;
@@ -792,6 +805,8 @@ more padding on the right to avoid overlap
     height: 6px;
 }
 
+
+
 /* hover state */
 
 .c-custom-option:hover {
@@ -808,9 +823,48 @@ more padding on the right to avoid overlap
 
 /* checked state */
 
+
 .c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
     opacity: 1; /* Show the symbol when the invisible checkbox/radio button is checked */
     transform: scale(1);
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol_hide {
+    display: none;
+    opacity: 0;
+    transform: scale(1.4);
+    fill: var(--global-color-neutral-x-dark);
+}
+
+.c-option--hidden:not(:checked) + .c-custom-option .c-custom-option__symbol_show {
+    display: none;
+    opacity: 0  ;
+    transform: scale(1.4);
+    fill: var(--global-color-neutral-x-dark);
+}
+
+.c-option--hidden:not(:checked) + .c-custom-option .c-custom-option__symbol_hide {
+    display: block;
+    opacity: 1;
+    transform: scale(1.4);
+    fill: var(--global-color-neutral-x-dark);
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol_show {
+    display: block;
+    opacity: 1;
+    transform: scale(1.4);
+    fill: var(--global-color-neutral-x-dark);
+}
+
+.c-password__hidden .c-custom-option__fake-input{
+    border: none;
+
+}
+
+.c-password__hidden .c-custom-option__fake-input  {
+    border: none ; 
+    box-shadow: none ;
 }
 
 /*
