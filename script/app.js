@@ -2,11 +2,12 @@ function handleFloatingLabel() {
    
 }
 
+
 function handlePasswordSwitcher() {
     
-    let checkbox = document.querySelector(`.c-password__hidden-chkbx`);
-    let passwordInput = document.querySelector(`.c-password_input`);
-    checkbox.addEventListener(`change`, function(){
+    let checkbox = document.querySelector(`.c-toggle-password__checkbox`);
+    let passwordInput = document.querySelector(`.c-toggle-password__input`);
+    try{checkbox.addEventListener(`change`, function(){
 
         if(checkbox.checked){
             passwordInput.type = "password";
@@ -20,12 +21,19 @@ function handlePasswordSwitcher() {
         
 
 
-    })
+    })}
+    catch{
+
+    }
+    
 
 }
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log('Script loaded!');
     handleFloatingLabel();
     handlePasswordSwitcher();
+    getDOMElements();
 });
